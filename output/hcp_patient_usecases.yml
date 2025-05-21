@@ -1,7 +1,7 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Lake Formation permissions generated from Ranger
 Resources:
-  LFPerm0_hcp_team:
+  LFPerm0HcpTeam:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: hcp_team
@@ -14,7 +14,7 @@ Resources:
           DatabaseName: hcp
           Name: profile
     Type: AWS::LakeFormation::Permissions
-  LFPerm1_dr_jones:
+  LFPerm1DrJones:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: dr_jones
@@ -29,7 +29,7 @@ Resources:
           DatabaseName: hcp
           Name: engagements
     Type: AWS::LakeFormation::Permissions
-  LFPerm1_hcp_team:
+  LFPerm1HcpTeam:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: hcp_team
@@ -44,7 +44,7 @@ Resources:
           DatabaseName: hcp
           Name: engagements
     Type: AWS::LakeFormation::Permissions
-  LFPerm2_data_privacy_officer:
+  LFPerm2DataPrivacyOfficer:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: data_privacy_officer
@@ -57,7 +57,7 @@ Resources:
           DatabaseName: patient
           Name: pii_masked
     Type: AWS::LakeFormation::Permissions
-  LFPerm3_patient_data_analysts:
+  LFPerm3PatientDataAnalysts:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: patient_data_analysts
@@ -71,7 +71,7 @@ Resources:
           DatabaseName: patient
           Name: outcomes
     Type: AWS::LakeFormation::Permissions
-  LFPerm4_clin_nurse:
+  LFPerm4ClinNurse:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: clin_nurse
@@ -87,7 +87,7 @@ Resources:
           DatabaseName: patient
           Name: clinical_records
     Type: AWS::LakeFormation::Permissions
-  LFPerm4_patient_care_team:
+  LFPerm4PatientCareTeam:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: patient_care_team

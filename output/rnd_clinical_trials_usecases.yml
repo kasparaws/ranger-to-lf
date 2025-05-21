@@ -1,7 +1,7 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Lake Formation permissions generated from Ranger
 Resources:
-  LFPerm0_bioinfo_joe:
+  LFPerm0BioinfoJoe:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: bioinfo_joe
@@ -15,7 +15,7 @@ Resources:
           DatabaseName: randd
           Name: sequencing
     Type: AWS::LakeFormation::Permissions
-  LFPerm0_r_and_d_team:
+  LFPerm0RAndDTeam:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: r_and_d_team
@@ -29,7 +29,7 @@ Resources:
           DatabaseName: randd
           Name: sequencing
     Type: AWS::LakeFormation::Permissions
-  LFPerm1_proteomics_team:
+  LFPerm1ProteomicsTeam:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: proteomics_team
@@ -42,7 +42,7 @@ Resources:
           DatabaseName: randd
           Name: proteomics
     Type: AWS::LakeFormation::Permissions
-  LFPerm2_clinical_ops_team:
+  LFPerm2ClinicalOpsTeam:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: clinical_ops_team
@@ -57,7 +57,7 @@ Resources:
           DatabaseName: clinical
           Name: patient_data
     Type: AWS::LakeFormation::Permissions
-  LFPerm3_clinical_ops_team:
+  LFPerm3ClinicalOpsTeam:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: clinical_ops_team
@@ -71,7 +71,7 @@ Resources:
           DatabaseName: clinical
           Name: results
     Type: AWS::LakeFormation::Permissions
-  LFPerm3_trial_mgr:
+  LFPerm3TrialMgr:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: trial_mgr
@@ -85,7 +85,7 @@ Resources:
           DatabaseName: clinical
           Name: results
     Type: AWS::LakeFormation::Permissions
-  LFPerm4_auditors:
+  LFPerm4Auditors:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: auditors

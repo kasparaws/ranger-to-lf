@@ -1,7 +1,7 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Lake Formation permissions generated from Ranger
 Resources:
-  LFPerm0_sales_ops:
+  LFPerm0SalesOps:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: sales_ops
@@ -15,7 +15,7 @@ Resources:
           DatabaseName: sales
           Name: performance_metrics
     Type: AWS::LakeFormation::Permissions
-  LFPerm1_sales_analyst:
+  LFPerm1SalesAnalyst:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: sales_analyst
@@ -30,7 +30,7 @@ Resources:
           DatabaseName: sales
           Name: forecasts
     Type: AWS::LakeFormation::Permissions
-  LFPerm1_sales_ops:
+  LFPerm1SalesOps:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: sales_ops
@@ -45,7 +45,7 @@ Resources:
           DatabaseName: sales
           Name: forecasts
     Type: AWS::LakeFormation::Permissions
-  LFPerm2_medical_affairs_team:
+  LFPerm2MedicalAffairsTeam:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: medical_affairs_team
@@ -58,7 +58,7 @@ Resources:
           DatabaseName: medaffairs
           Name: publications
     Type: AWS::LakeFormation::Permissions
-  LFPerm3_glossary_mgr:
+  LFPerm3GlossaryMgr:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: glossary_mgr
@@ -74,7 +74,7 @@ Resources:
           DatabaseName: medaffairs
           Name: field_glossary
     Type: AWS::LakeFormation::Permissions
-  LFPerm3_medical_affairs_team:
+  LFPerm3MedicalAffairsTeam:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: medical_affairs_team

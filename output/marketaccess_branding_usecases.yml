@@ -1,7 +1,7 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Lake Formation permissions generated from Ranger
 Resources:
-  LFPerm0_market_access_team:
+  LFPerm0MarketAccessTeam:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: market_access_team
@@ -14,7 +14,7 @@ Resources:
           DatabaseName: marketaccess
           Name: reimbursement
     Type: AWS::LakeFormation::Permissions
-  LFPerm1_ma_lead:
+  LFPerm1MaLead:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: ma_lead
@@ -29,7 +29,7 @@ Resources:
           DatabaseName: marketaccess
           Name: cost_models
     Type: AWS::LakeFormation::Permissions
-  LFPerm1_market_access_team:
+  LFPerm1MarketAccessTeam:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: market_access_team
@@ -44,7 +44,7 @@ Resources:
           DatabaseName: marketaccess
           Name: cost_models
     Type: AWS::LakeFormation::Permissions
-  LFPerm2_brand_mgr:
+  LFPerm2BrandMgr:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: brand_mgr
@@ -59,7 +59,7 @@ Resources:
           DatabaseName: branding
           Name: assets
     Type: AWS::LakeFormation::Permissions
-  LFPerm2_branding_team:
+  LFPerm2BrandingTeam:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: branding_team
@@ -74,7 +74,7 @@ Resources:
           DatabaseName: branding
           Name: assets
     Type: AWS::LakeFormation::Permissions
-  LFPerm3_branding_team:
+  LFPerm3BrandingTeam:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: branding_team

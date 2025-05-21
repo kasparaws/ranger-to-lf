@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Convert all Ranger policy JSON files in a folder into AWS Lake Formation
-CloudFormation templates, without using YAML anchors/aliases.
+CloudFormation templates, without YAML aliases and ensuring valid logical IDs.
 
 Usage:
     python ranger_to_lf_converter.py --policies-dir policies --output-dir output
@@ -12,6 +12,7 @@ import argparse
 import os
 import glob
 import sys
+import re
 
 # Custom Dumper to disable YAML aliases
 class NoAliasDumper(yaml.SafeDumper):
@@ -50,7 +51,11 @@ def build_cfn(policies):
     for i, pol in enumerate(policies):
         db, tbl, principals, perms = parse_policy(pol)
         for p in principals:
-            logical_id = f"LFPerm{i}_{p['DataLakePrincipalIdentifier'].replace('-', '_')}"
+            identifier = p['DataLakePrincipalIdentifier']
+            # Build CamelCase alphanumeric token for logical ID
+            parts = re.split(r'[^0-9a-zA-Z]+', identifier)
+            token = ''.join(part.capitalize() for part in parts if part)
+            logical_id = f"LFPerm{i}{token}"
             tpl["Resources"][logical_id] = {
                 "Type": "AWS::LakeFormation::Permissions",
                 "Properties": {

@@ -1,7 +1,7 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Lake Formation permissions generated from Ranger
 Resources:
-  LFPerm0_dr_smith:
+  LFPerm0DrSmith:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: dr_smith
@@ -16,7 +16,7 @@ Resources:
           DatabaseName: randd
           Name: genomics_raw
     Type: AWS::LakeFormation::Permissions
-  LFPerm0_r_and_d_team:
+  LFPerm0RAndDTeam:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: r_and_d_team
@@ -31,7 +31,7 @@ Resources:
           DatabaseName: randd
           Name: genomics_raw
     Type: AWS::LakeFormation::Permissions
-  LFPerm1_executive_team:
+  LFPerm1ExecutiveTeam:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: executive_team
@@ -44,7 +44,7 @@ Resources:
           DatabaseName: business
           Name: key_metrics
     Type: AWS::LakeFormation::Permissions
-  LFPerm2_data_privacy_officer:
+  LFPerm2DataPrivacyOfficer:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: data_privacy_officer
@@ -57,7 +57,7 @@ Resources:
           DatabaseName: patient
           Name: pii
     Type: AWS::LakeFormation::Permissions
-  LFPerm3_data_engineers:
+  LFPerm3DataEngineers:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: data_engineers
@@ -75,7 +75,7 @@ Resources:
           DatabaseName: sandbox
           Name: '*'
     Type: AWS::LakeFormation::Permissions
-  LFPerm3_eng_sam:
+  LFPerm3EngSam:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: eng_sam

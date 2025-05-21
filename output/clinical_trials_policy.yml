@@ -1,7 +1,7 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Lake Formation permissions generated from Ranger
 Resources:
-  LFPerm0_clinical_ops_team:
+  LFPerm0ClinicalOpsTeam:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: clinical_ops_team
@@ -17,7 +17,7 @@ Resources:
           DatabaseName: clinical
           Name: trial_data
     Type: AWS::LakeFormation::Permissions
-  LFPerm0_trial_mgr:
+  LFPerm0TrialMgr:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: trial_mgr
@@ -33,7 +33,7 @@ Resources:
           DatabaseName: clinical
           Name: trial_data
     Type: AWS::LakeFormation::Permissions
-  LFPerm1_biostatistics_team:
+  LFPerm1BiostatisticsTeam:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: biostatistics_team
@@ -46,7 +46,7 @@ Resources:
           DatabaseName: clinical
           Name: statistics
     Type: AWS::LakeFormation::Permissions
-  LFPerm2_reg_affairs_team:
+  LFPerm2RegAffairsTeam:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: reg_affairs_team
@@ -59,7 +59,7 @@ Resources:
           DatabaseName: regulatory
           Name: submissions
     Type: AWS::LakeFormation::Permissions
-  LFPerm3_contract_research_org:
+  LFPerm3ContractResearchOrg:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: contract_research_org
@@ -72,7 +72,7 @@ Resources:
           DatabaseName: clinical
           Name: anonymized_data
     Type: AWS::LakeFormation::Permissions
-  LFPerm3_vendor_user:
+  LFPerm3VendorUser:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: vendor_user
@@ -85,7 +85,7 @@ Resources:
           DatabaseName: clinical
           Name: anonymized_data
     Type: AWS::LakeFormation::Permissions
-  LFPerm4_auditors:
+  LFPerm4Auditors:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: auditors

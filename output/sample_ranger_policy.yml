@@ -1,7 +1,7 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Lake Formation permissions generated from Ranger
 Resources:
-  LFPerm0_alice:
+  LFPerm0Alice:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: alice
@@ -16,7 +16,7 @@ Resources:
           DatabaseName: sales
           Name: customers
     Type: AWS::LakeFormation::Permissions
-  LFPerm0_analysts:
+  LFPerm0Analysts:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: analysts
@@ -31,7 +31,7 @@ Resources:
           DatabaseName: sales
           Name: customers
     Type: AWS::LakeFormation::Permissions
-  LFPerm0_bob:
+  LFPerm0Bob:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: bob
@@ -46,7 +46,7 @@ Resources:
           DatabaseName: sales
           Name: customers
     Type: AWS::LakeFormation::Permissions
-  LFPerm1_marketing_team:
+  LFPerm1MarketingTeam:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: marketing_team
