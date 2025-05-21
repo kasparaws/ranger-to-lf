@@ -4,7 +4,7 @@ Resources:
   LFPerm0ClinicalOpsTeamTrial_data:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/clinical_ops_team
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/clinical_ops_team
       Permissions:
       - SELECT
       - INSERT
@@ -12,14 +12,14 @@ Resources:
       - DELETE
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: clinical
           Name: trial_data
     Type: AWS::LakeFormation::Permissions
   LFPerm0TrialMgrTrial_data:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/trial_mgr
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/trial_mgr
       Permissions:
       - SELECT
       - INSERT
@@ -27,67 +27,67 @@ Resources:
       - DELETE
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: clinical
           Name: trial_data
     Type: AWS::LakeFormation::Permissions
   LFPerm1BiostatisticsTeamStatistics:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/biostatistics_team
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/biostatistics_team
       Permissions:
       - SELECT
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: clinical
           Name: statistics
     Type: AWS::LakeFormation::Permissions
   LFPerm2RegAffairsTeamSubmissions:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/reg_affairs_team
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/reg_affairs_team
       Permissions:
       - SELECT
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: regulatory
           Name: submissions
     Type: AWS::LakeFormation::Permissions
   LFPerm3ContractResearchOrgAnonymized_data:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/contract_research_org
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/contract_research_org
       Permissions:
       - SELECT
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: clinical
           Name: anonymized_data
     Type: AWS::LakeFormation::Permissions
   LFPerm3VendorUserAnonymized_data:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/vendor_user
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/vendor_user
       Permissions:
       - SELECT
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: clinical
           Name: anonymized_data
     Type: AWS::LakeFormation::Permissions
   LFPerm4AuditorsAudit_events:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/auditors
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/auditors
       Permissions:
       - SELECT
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: logs
           Name: audit_events
     Type: AWS::LakeFormation::Permissions

@@ -4,59 +4,59 @@ Resources:
   LFPerm0DrSmithGenomics_raw:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/dr_smith
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/dr_smith
       Permissions:
       - SELECT
       - INSERT
       - ALTER
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: randd
           Name: genomics_raw
     Type: AWS::LakeFormation::Permissions
   LFPerm0RAndDTeamGenomics_raw:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/r_and_d_team
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/r_and_d_team
       Permissions:
       - SELECT
       - INSERT
       - ALTER
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: randd
           Name: genomics_raw
     Type: AWS::LakeFormation::Permissions
   LFPerm1ExecutiveTeamKey_metrics:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/executive_team
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/executive_team
       Permissions:
       - SELECT
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: business
           Name: key_metrics
     Type: AWS::LakeFormation::Permissions
   LFPerm2DataPrivacyOfficerPii:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/data_privacy_officer
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/data_privacy_officer
       Permissions:
       - SELECT
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: patient
           Name: pii
     Type: AWS::LakeFormation::Permissions
   LFPerm3DataEngineers*:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/data_engineers
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/data_engineers
       Permissions:
       - SELECT
       - INSERT
@@ -66,14 +66,14 @@ Resources:
       - DROP
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: sandbox
           Name: '*'
     Type: AWS::LakeFormation::Permissions
   LFPerm3EngSam*:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/eng_sam
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/eng_sam
       Permissions:
       - SELECT
       - INSERT
@@ -83,7 +83,7 @@ Resources:
       - DROP
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: sandbox
           Name: '*'
     Type: AWS::LakeFormation::Permissions

@@ -4,60 +4,60 @@ Resources:
   LFPerm0SalesOpsPerformance_metrics:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/sales_ops
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/sales_ops
       Permissions:
       - SELECT
       - INSERT
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: sales
           Name: performance_metrics
     Type: AWS::LakeFormation::Permissions
   LFPerm1SalesAnalystForecasts:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/sales_analyst
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/sales_analyst
       Permissions:
       - SELECT
       - INSERT
       - ALTER
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: sales
           Name: forecasts
     Type: AWS::LakeFormation::Permissions
   LFPerm1SalesOpsForecasts:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/sales_ops
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/sales_ops
       Permissions:
       - SELECT
       - INSERT
       - ALTER
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: sales
           Name: forecasts
     Type: AWS::LakeFormation::Permissions
   LFPerm2MedicalAffairsTeamPublications:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/medical_affairs_team
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/medical_affairs_team
       Permissions:
       - SELECT
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: medaffairs
           Name: publications
     Type: AWS::LakeFormation::Permissions
   LFPerm3GlossaryMgrField_glossary:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/glossary_mgr
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/glossary_mgr
       Permissions:
       - SELECT
       - INSERT
@@ -65,14 +65,14 @@ Resources:
       - DELETE
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: medaffairs
           Name: field_glossary
     Type: AWS::LakeFormation::Permissions
   LFPerm3MedicalAffairsTeamField_glossary:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/medical_affairs_team
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/medical_affairs_team
       Permissions:
       - SELECT
       - INSERT
@@ -80,7 +80,7 @@ Resources:
       - DELETE
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: medaffairs
           Name: field_glossary
     Type: AWS::LakeFormation::Permissions

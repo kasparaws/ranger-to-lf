@@ -4,54 +4,54 @@ Resources:
   LFPerm0AliceCustomers:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/alice
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/alice
       Permissions:
       - SELECT
       - INSERT
       - ALTER
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: sales
           Name: customers
     Type: AWS::LakeFormation::Permissions
   LFPerm0AnalystsCustomers:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/analysts
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/analysts
       Permissions:
       - SELECT
       - INSERT
       - ALTER
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: sales
           Name: customers
     Type: AWS::LakeFormation::Permissions
   LFPerm0BobCustomers:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/bob
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/bob
       Permissions:
       - SELECT
       - INSERT
       - ALTER
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: sales
           Name: customers
     Type: AWS::LakeFormation::Permissions
   LFPerm1MarketingTeamCampaigns:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/marketing_team
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/marketing_team
       Permissions:
       - SELECT
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: marketing
           Name: campaigns
     Type: AWS::LakeFormation::Permissions

@@ -4,52 +4,52 @@ Resources:
   LFPerm0AdminTest:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/Admin
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/Admin
       Permissions:
       - SELECT
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: default
           Name: test
     Type: AWS::LakeFormation::Permissions
   LFPerm1AdminTest:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/Admin
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/Admin
       Permissions:
       - SELECT
       - INSERT
       - ALTER
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: default
           Name: test
     Type: AWS::LakeFormation::Permissions
   LFPerm2AdminTest:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/Admin
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/Admin
       Permissions:
       - SELECT
       - INSERT
       - DELETE
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: default
           Name: test
     Type: AWS::LakeFormation::Permissions
   LFPerm3AdminTest:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/Admin
+        DataLakePrincipalIdentifier: arn:aws:iam::111111:role/Admin
       Permissions:
       - SELECT
       Resource:
         TableResource:
-          CatalogId: '123456789012'
+          CatalogId: '111111'
           DatabaseName: default
           Name: test
     Type: AWS::LakeFormation::Permissions
