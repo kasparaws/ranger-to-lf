@@ -61,7 +61,7 @@ def build_cfn(policies):
                 "Properties": {
                     "DataLakePrincipal": p,
                     "Resource": {
-                        "Table": {
+                        "TableResource": {
                             "CatalogId": {"Ref": "AWS::AccountId"},
                             "DatabaseName": db,
                             "Name": tbl
