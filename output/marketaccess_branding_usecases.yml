@@ -8,7 +8,7 @@ Resources:
       Permissions:
       - SELECT
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: marketaccess
@@ -23,7 +23,7 @@ Resources:
       - INSERT
       - ALTER
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: marketaccess
@@ -38,7 +38,7 @@ Resources:
       - INSERT
       - ALTER
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: marketaccess
@@ -53,7 +53,7 @@ Resources:
       - INSERT
       - DELETE
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: branding
@@ -68,7 +68,7 @@ Resources:
       - INSERT
       - DELETE
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: branding
@@ -81,7 +81,7 @@ Resources:
       Permissions:
       - SELECT
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: branding

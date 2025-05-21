@@ -11,7 +11,7 @@ Resources:
       - ALTER
       - DELETE
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: clinical
@@ -27,7 +27,7 @@ Resources:
       - ALTER
       - DELETE
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: clinical
@@ -40,7 +40,7 @@ Resources:
       Permissions:
       - SELECT
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: clinical
@@ -53,7 +53,7 @@ Resources:
       Permissions:
       - SELECT
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: regulatory
@@ -66,7 +66,7 @@ Resources:
       Permissions:
       - SELECT
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: clinical
@@ -79,7 +79,7 @@ Resources:
       Permissions:
       - SELECT
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: clinical
@@ -92,7 +92,7 @@ Resources:
       Permissions:
       - SELECT
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: logs

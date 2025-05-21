@@ -9,7 +9,7 @@ Resources:
       - SELECT
       - INSERT
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: sales
@@ -24,7 +24,7 @@ Resources:
       - INSERT
       - ALTER
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: sales
@@ -39,7 +39,7 @@ Resources:
       - INSERT
       - ALTER
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: sales
@@ -52,7 +52,7 @@ Resources:
       Permissions:
       - SELECT
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: medaffairs
@@ -68,7 +68,7 @@ Resources:
       - ALTER
       - DELETE
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: medaffairs
@@ -84,7 +84,7 @@ Resources:
       - ALTER
       - DELETE
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: medaffairs

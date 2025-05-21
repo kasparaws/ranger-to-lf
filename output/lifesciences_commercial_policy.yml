@@ -10,7 +10,7 @@ Resources:
       - INSERT
       - ALTER
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: randd
@@ -25,7 +25,7 @@ Resources:
       - INSERT
       - ALTER
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: randd
@@ -38,7 +38,7 @@ Resources:
       Permissions:
       - SELECT
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: business
@@ -51,7 +51,7 @@ Resources:
       Permissions:
       - SELECT
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: patient
@@ -69,7 +69,7 @@ Resources:
       - CREATE_TABLE
       - DROP
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: sandbox
@@ -87,7 +87,7 @@ Resources:
       - CREATE_TABLE
       - DROP
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: sandbox

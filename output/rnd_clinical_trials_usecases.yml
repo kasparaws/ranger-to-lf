@@ -9,7 +9,7 @@ Resources:
       - SELECT
       - INSERT
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: randd
@@ -23,7 +23,7 @@ Resources:
       - SELECT
       - INSERT
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: randd
@@ -36,7 +36,7 @@ Resources:
       Permissions:
       - SELECT
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: randd
@@ -51,7 +51,7 @@ Resources:
       - INSERT
       - ALTER
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: clinical
@@ -65,7 +65,7 @@ Resources:
       - SELECT
       - INSERT
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: clinical
@@ -79,7 +79,7 @@ Resources:
       - SELECT
       - INSERT
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: clinical
@@ -92,7 +92,7 @@ Resources:
       Permissions:
       - SELECT
       Resource:
-        Table:
+        TableResource:
           CatalogId:
             Ref: AWS::AccountId
           DatabaseName: logs
