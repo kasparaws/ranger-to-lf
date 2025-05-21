@@ -1,49 +1,48 @@
 {
-    "policies": [
-      {
-        "id": 701,
-        "name": "marketaccess_reimbursement_data",
-        "service": "hive_prod",
-        "resourcePath": "/warehouse/marketaccess.db/reimbursement",
-        "database": "marketaccess",
-        "table": "reimbursement",
-        "users": [],
-        "groups": ["market_access_team"],
-        "permissions": ["select"]
-      },
-      {
-        "id": 702,
-        "name": "marketaccess_cost_models_edit",
-        "service": "hive_prod",
-        "resourcePath": "/warehouse/marketaccess.db/cost_models",
-        "database": "marketaccess",
-        "table": "cost_models",
-        "users": ["ma_lead"],
-        "groups": ["market_access_team"],
-        "permissions": ["select", "insert", "update"]
-      },
-      {
-        "id": 703,
-        "name": "branding_assets_upload",
-        "service": "hive_prod",
-        "resourcePath": "/warehouse/branding.db/assets",
-        "database": "branding",
-        "table": "assets",
-        "users": ["brand_mgr"],
-        "groups": ["branding_team"],
-        "permissions": ["select", "insert", "delete"]
-      },
-      {
-        "id": 704,
-        "name": "branding_campaign_read",
-        "service": "hive_prod",
-        "resourcePath": "/warehouse/branding.db/campaign_data",
-        "database": "branding",
-        "table": "campaign_data",
-        "users": [],
-        "groups": ["branding_team"],
-        "permissions": ["select"]
-      }
-    ]
-  }
-  
+  "policies": [
+    {
+      "id": 701,
+      "name": "marketaccess_reimbursement_data",
+      "service": "hive_prod",
+      "resourcePath": "/warehouse/marketaccess.db/reimbursement",
+      "database": "marketaccess",
+      "table": "reimbursement",
+      "users": [],
+      "groups": ["market_access_team"],
+      "permissions": ["select"]
+    },
+    {
+      "id": 702,
+      "name": "marketaccess_cost_models_edit",
+      "service": "hive_prod",
+      "resourcePath": "/warehouse/marketaccess.db/cost_models",
+      "database": "marketaccess",
+      "table": "cost_models",
+      "users": [],
+      "groups": ["market_access_team"],
+      "permissions": ["select", "insert", "update"]
+    },
+    {
+      "id": 703,
+      "name": "branding_assets_upload",
+      "service": "hive_prod",
+      "resourcePath": "/warehouse/branding.db/assets",
+      "database": "branding",
+      "table": "assets",
+      "users": [],
+      "groups": ["branding_team"],
+      "permissions": ["select", "insert", "delete"]
+    },
+    {
+      "id": 704,
+      "name": "branding_campaign_read",
+      "service": "hive_prod",
+      "resourcePath": "/warehouse/branding.db/campaign_data",
+      "database": "branding",
+      "table": "campaign_data",
+      "users": [],
+      "groups": ["branding_team"],
+      "permissions": ["select"]
+    }
+  ]
+}

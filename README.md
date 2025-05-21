@@ -60,8 +60,10 @@ Run the converter to process all JSON files in `policies/` and write YAML templa
 
 ```bash
 python ranger_to_lf_converter.py \
+  --config config.yml \
   --policies-dir policies \
   --output-dir output
+
 ```
 
 * `--policies-dir` (`-p`): Directory containing Ranger JSON policy files

@@ -1,89 +1,55 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Lake Formation permissions generated from Ranger
 Resources:
-  LFPerm0MarketAccessTeam:
+  LFPerm0AdminTest:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: market_access_team
+        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/Admin
       Permissions:
       - SELECT
       Resource:
         TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
-          DatabaseName: marketaccess
-          Name: reimbursement
+          CatalogId: '123456789012'
+          DatabaseName: default
+          Name: test
     Type: AWS::LakeFormation::Permissions
-  LFPerm1MaLead:
+  LFPerm1AdminTest:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: ma_lead
+        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/Admin
       Permissions:
       - SELECT
       - INSERT
       - ALTER
       Resource:
         TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
-          DatabaseName: marketaccess
-          Name: cost_models
+          CatalogId: '123456789012'
+          DatabaseName: default
+          Name: test
     Type: AWS::LakeFormation::Permissions
-  LFPerm1MarketAccessTeam:
+  LFPerm2AdminTest:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: market_access_team
-      Permissions:
-      - SELECT
-      - INSERT
-      - ALTER
-      Resource:
-        TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
-          DatabaseName: marketaccess
-          Name: cost_models
-    Type: AWS::LakeFormation::Permissions
-  LFPerm2BrandMgr:
-    Properties:
-      DataLakePrincipal:
-        DataLakePrincipalIdentifier: brand_mgr
+        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/Admin
       Permissions:
       - SELECT
       - INSERT
       - DELETE
       Resource:
         TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
-          DatabaseName: branding
-          Name: assets
+          CatalogId: '123456789012'
+          DatabaseName: default
+          Name: test
     Type: AWS::LakeFormation::Permissions
-  LFPerm2BrandingTeam:
+  LFPerm3AdminTest:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: branding_team
-      Permissions:
-      - SELECT
-      - INSERT
-      - DELETE
-      Resource:
-        TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
-          DatabaseName: branding
-          Name: assets
-    Type: AWS::LakeFormation::Permissions
-  LFPerm3BrandingTeam:
-    Properties:
-      DataLakePrincipal:
-        DataLakePrincipalIdentifier: branding_team
+        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/Admin
       Permissions:
       - SELECT
       Resource:
         TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
-          DatabaseName: branding
-          Name: campaign_data
+          CatalogId: '123456789012'
+          DatabaseName: default
+          Name: test
     Type: AWS::LakeFormation::Permissions

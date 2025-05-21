@@ -1,80 +1,75 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Lake Formation permissions generated from Ranger
 Resources:
-  LFPerm0HcpTeam:
+  LFPerm0HcpTeamProfile:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: hcp_team
+        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/hcp_team
       Permissions:
       - SELECT
       Resource:
         TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
+          CatalogId: '123456789012'
           DatabaseName: hcp
           Name: profile
     Type: AWS::LakeFormation::Permissions
-  LFPerm1DrJones:
+  LFPerm1DrJonesEngagements:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: dr_jones
+        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/dr_jones
       Permissions:
       - SELECT
       - INSERT
       - ALTER
       Resource:
         TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
+          CatalogId: '123456789012'
           DatabaseName: hcp
           Name: engagements
     Type: AWS::LakeFormation::Permissions
-  LFPerm1HcpTeam:
+  LFPerm1HcpTeamEngagements:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: hcp_team
+        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/hcp_team
       Permissions:
       - SELECT
       - INSERT
       - ALTER
       Resource:
         TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
+          CatalogId: '123456789012'
           DatabaseName: hcp
           Name: engagements
     Type: AWS::LakeFormation::Permissions
-  LFPerm2DataPrivacyOfficer:
+  LFPerm2DataPrivacyOfficerPii_masked:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: data_privacy_officer
+        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/data_privacy_officer
       Permissions:
       - SELECT
       Resource:
         TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
+          CatalogId: '123456789012'
           DatabaseName: patient
           Name: pii_masked
     Type: AWS::LakeFormation::Permissions
-  LFPerm3PatientDataAnalysts:
+  LFPerm3PatientDataAnalystsOutcomes:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: patient_data_analysts
+        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/patient_data_analysts
       Permissions:
       - SELECT
       - INSERT
       Resource:
         TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
+          CatalogId: '123456789012'
           DatabaseName: patient
           Name: outcomes
     Type: AWS::LakeFormation::Permissions
-  LFPerm4ClinNurse:
+  LFPerm4ClinNurseClinical_records:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: clin_nurse
+        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/clin_nurse
       Permissions:
       - SELECT
       - INSERT
@@ -82,15 +77,14 @@ Resources:
       - DELETE
       Resource:
         TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
+          CatalogId: '123456789012'
           DatabaseName: patient
           Name: clinical_records
     Type: AWS::LakeFormation::Permissions
-  LFPerm4PatientCareTeam:
+  LFPerm4PatientCareTeamClinical_records:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: patient_care_team
+        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/patient_care_team
       Permissions:
       - SELECT
       - INSERT
@@ -98,8 +92,7 @@ Resources:
       - DELETE
       Resource:
         TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
+          CatalogId: '123456789012'
           DatabaseName: patient
           Name: clinical_records
     Type: AWS::LakeFormation::Permissions

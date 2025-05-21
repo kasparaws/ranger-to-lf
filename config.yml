@@ -1,0 +1,38 @@
+account_id: "123456789012"
+principal_arn_template: "arn:aws:iam::{account}:role/{principal}"
+ 
+
+# Fallback if a policy JSON doesn’t specify a database
+default_database: "default"
+
+# Remap source DB → target DB
+database_overrides:
+  # send all “marketaccess” policies into a production DB
+  marketaccess: "default"
+  branding: "default"
+
+# Remap source table names → target table names
+table_overrides:
+  # tests or sandbox tables you want to point at a canonical resource
+  pricing_models: "test"
+  reimbursement:    "test"
+  reimbursement_prod: "test"
+  cost_models:    "test"
+  assets: "test"
+  campaign_data:    "test"
+
+
+
+
+
+# Remap Ranger groups → IAM Role names
+group_overrides:
+  # you can point the “market_access_team” group at a centralized Admin role
+  market_access_team: "Admin"
+  ma_lead: "Admin"
+  brand_mgr: "Admin"
+  branding_team: "Admin"
+
+
+
+

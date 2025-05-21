@@ -1,66 +1,62 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Lake Formation permissions generated from Ranger
 Resources:
-  LFPerm0DrSmith:
+  LFPerm0DrSmithGenomics_raw:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: dr_smith
+        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/dr_smith
       Permissions:
       - SELECT
       - INSERT
       - ALTER
       Resource:
         TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
+          CatalogId: '123456789012'
           DatabaseName: randd
           Name: genomics_raw
     Type: AWS::LakeFormation::Permissions
-  LFPerm0RAndDTeam:
+  LFPerm0RAndDTeamGenomics_raw:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: r_and_d_team
+        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/r_and_d_team
       Permissions:
       - SELECT
       - INSERT
       - ALTER
       Resource:
         TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
+          CatalogId: '123456789012'
           DatabaseName: randd
           Name: genomics_raw
     Type: AWS::LakeFormation::Permissions
-  LFPerm1ExecutiveTeam:
+  LFPerm1ExecutiveTeamKey_metrics:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: executive_team
+        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/executive_team
       Permissions:
       - SELECT
       Resource:
         TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
+          CatalogId: '123456789012'
           DatabaseName: business
           Name: key_metrics
     Type: AWS::LakeFormation::Permissions
-  LFPerm2DataPrivacyOfficer:
+  LFPerm2DataPrivacyOfficerPii:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: data_privacy_officer
+        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/data_privacy_officer
       Permissions:
       - SELECT
       Resource:
         TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
+          CatalogId: '123456789012'
           DatabaseName: patient
           Name: pii
     Type: AWS::LakeFormation::Permissions
-  LFPerm3DataEngineers:
+  LFPerm3DataEngineers*:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: data_engineers
+        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/data_engineers
       Permissions:
       - SELECT
       - INSERT
@@ -70,15 +66,14 @@ Resources:
       - DROP
       Resource:
         TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
+          CatalogId: '123456789012'
           DatabaseName: sandbox
           Name: '*'
     Type: AWS::LakeFormation::Permissions
-  LFPerm3EngSam:
+  LFPerm3EngSam*:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: eng_sam
+        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/eng_sam
       Permissions:
       - SELECT
       - INSERT
@@ -88,8 +83,7 @@ Resources:
       - DROP
       Resource:
         TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
+          CatalogId: '123456789012'
           DatabaseName: sandbox
           Name: '*'
     Type: AWS::LakeFormation::Permissions

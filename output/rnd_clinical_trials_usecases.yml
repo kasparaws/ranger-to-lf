@@ -1,100 +1,93 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Lake Formation permissions generated from Ranger
 Resources:
-  LFPerm0BioinfoJoe:
+  LFPerm0BioinfoJoeSequencing:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: bioinfo_joe
+        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/bioinfo_joe
       Permissions:
       - SELECT
       - INSERT
       Resource:
         TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
+          CatalogId: '123456789012'
           DatabaseName: randd
           Name: sequencing
     Type: AWS::LakeFormation::Permissions
-  LFPerm0RAndDTeam:
+  LFPerm0RAndDTeamSequencing:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: r_and_d_team
+        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/r_and_d_team
       Permissions:
       - SELECT
       - INSERT
       Resource:
         TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
+          CatalogId: '123456789012'
           DatabaseName: randd
           Name: sequencing
     Type: AWS::LakeFormation::Permissions
-  LFPerm1ProteomicsTeam:
+  LFPerm1ProteomicsTeamProteomics:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: proteomics_team
+        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/proteomics_team
       Permissions:
       - SELECT
       Resource:
         TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
+          CatalogId: '123456789012'
           DatabaseName: randd
           Name: proteomics
     Type: AWS::LakeFormation::Permissions
-  LFPerm2ClinicalOpsTeam:
+  LFPerm2ClinicalOpsTeamPatient_data:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: clinical_ops_team
+        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/clinical_ops_team
       Permissions:
       - SELECT
       - INSERT
       - ALTER
       Resource:
         TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
+          CatalogId: '123456789012'
           DatabaseName: clinical
           Name: patient_data
     Type: AWS::LakeFormation::Permissions
-  LFPerm3ClinicalOpsTeam:
+  LFPerm3ClinicalOpsTeamResults:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: clinical_ops_team
+        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/clinical_ops_team
       Permissions:
       - SELECT
       - INSERT
       Resource:
         TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
+          CatalogId: '123456789012'
           DatabaseName: clinical
           Name: results
     Type: AWS::LakeFormation::Permissions
-  LFPerm3TrialMgr:
+  LFPerm3TrialMgrResults:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: trial_mgr
+        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/trial_mgr
       Permissions:
       - SELECT
       - INSERT
       Resource:
         TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
+          CatalogId: '123456789012'
           DatabaseName: clinical
           Name: results
     Type: AWS::LakeFormation::Permissions
-  LFPerm4Auditors:
+  LFPerm4AuditorsClinical_audit:
     Properties:
       DataLakePrincipal:
-        DataLakePrincipalIdentifier: auditors
+        DataLakePrincipalIdentifier: arn:aws:iam::123456789012:role/auditors
       Permissions:
       - SELECT
       Resource:
         TableResource:
-          CatalogId:
-            Ref: AWS::AccountId
+          CatalogId: '123456789012'
           DatabaseName: logs
           Name: clinical_audit
     Type: AWS::LakeFormation::Permissions
