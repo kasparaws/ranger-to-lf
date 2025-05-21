@@ -16,7 +16,7 @@ Usage:
 Example `config.yml` keys:
 ```yaml
 # AWS account ID for CatalogId
-account_id: "123456789012"
+account_id: "11111"
 
 # ARN template, {account} and {principal} placeholders
 principal_arn_template: "arn:aws:iam::{account}:role/{principal}"
