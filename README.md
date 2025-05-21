@@ -120,4 +120,4 @@ Resources:
 
 ## License
 
-This project is released under the MIT License. Feel free to use, modify, and distribute as needed.
+.
