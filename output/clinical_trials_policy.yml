@@ -1,0 +1,95 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Lake Formation permissions generated from Ranger
+Resources:
+  LFPerm0_clinical_ops_team:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: clinical_ops_team
+      Permissions: &id001
+      - SELECT
+      - INSERT
+      - ALTER
+      - DELETE
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: clinical
+          Name: trial_data
+    Type: AWS::LakeFormation::Permissions
+  LFPerm0_trial_mgr:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: trial_mgr
+      Permissions: *id001
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: clinical
+          Name: trial_data
+    Type: AWS::LakeFormation::Permissions
+  LFPerm1_biostatistics_team:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: biostatistics_team
+      Permissions:
+      - SELECT
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: clinical
+          Name: statistics
+    Type: AWS::LakeFormation::Permissions
+  LFPerm2_reg_affairs_team:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: reg_affairs_team
+      Permissions:
+      - SELECT
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: regulatory
+          Name: submissions
+    Type: AWS::LakeFormation::Permissions
+  LFPerm3_contract_research_org:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: contract_research_org
+      Permissions: &id002
+      - SELECT
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: clinical
+          Name: anonymized_data
+    Type: AWS::LakeFormation::Permissions
+  LFPerm3_vendor_user:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: vendor_user
+      Permissions: *id002
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: clinical
+          Name: anonymized_data
+    Type: AWS::LakeFormation::Permissions
+  LFPerm4_auditors:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: auditors
+      Permissions:
+      - SELECT
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: logs
+          Name: audit_events
+    Type: AWS::LakeFormation::Permissions

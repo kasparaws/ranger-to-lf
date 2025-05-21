@@ -1,0 +1,55 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Lake Formation permissions generated from Ranger
+Resources:
+  LFPerm0_alice:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: alice
+      Permissions: &id001
+      - SELECT
+      - INSERT
+      - ALTER
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: sales
+          Name: customers
+    Type: AWS::LakeFormation::Permissions
+  LFPerm0_analysts:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: analysts
+      Permissions: *id001
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: sales
+          Name: customers
+    Type: AWS::LakeFormation::Permissions
+  LFPerm0_bob:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: bob
+      Permissions: *id001
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: sales
+          Name: customers
+    Type: AWS::LakeFormation::Permissions
+  LFPerm1_marketing_team:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: marketing_team
+      Permissions:
+      - SELECT
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: marketing
+          Name: campaigns
+    Type: AWS::LakeFormation::Permissions

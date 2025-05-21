@@ -1,0 +1,86 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Lake Formation permissions generated from Ranger
+Resources:
+  LFPerm0_dr_smith:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: dr_smith
+      Permissions: &id001
+      - SELECT
+      - INSERT
+      - ALTER
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: randd
+          Name: genomics_raw
+    Type: AWS::LakeFormation::Permissions
+  LFPerm0_r_and_d_team:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: r_and_d_team
+      Permissions: *id001
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: randd
+          Name: genomics_raw
+    Type: AWS::LakeFormation::Permissions
+  LFPerm1_executive_team:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: executive_team
+      Permissions:
+      - SELECT
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: business
+          Name: key_metrics
+    Type: AWS::LakeFormation::Permissions
+  LFPerm2_data_privacy_officer:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: data_privacy_officer
+      Permissions:
+      - SELECT
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: patient
+          Name: pii
+    Type: AWS::LakeFormation::Permissions
+  LFPerm3_data_engineers:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: data_engineers
+      Permissions: &id002
+      - SELECT
+      - INSERT
+      - ALTER
+      - DELETE
+      - CREATE_TABLE
+      - DROP
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: sandbox
+          Name: '*'
+    Type: AWS::LakeFormation::Permissions
+  LFPerm3_eng_sam:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: eng_sam
+      Permissions: *id002
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: sandbox
+          Name: '*'
+    Type: AWS::LakeFormation::Permissions

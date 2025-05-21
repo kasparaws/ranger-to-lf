@@ -1,0 +1,27 @@
+{
+    "policies": [
+      {
+        "id": 101,
+        "name": "sales_readwrite",
+        "service": "hive_dev",
+        "resourcePath": "/warehouse/sales.db/customers",
+        "database": "sales",
+        "table": "customers",
+        "users": ["alice", "bob"],
+        "groups": ["analysts"],
+        "permissions": ["select", "insert", "update"]
+      },
+      {
+        "id": 102,
+        "name": "marketing_select",
+        "service": "hive_dev",
+        "resourcePath": "/warehouse/marketing.db/campaigns",
+        "database": "marketing",
+        "table": "campaigns",
+        "users": [],
+        "groups": ["marketing_team"],
+        "permissions": ["select"]
+      }
+    ]
+  }
+  

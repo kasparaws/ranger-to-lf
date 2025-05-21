@@ -1,0 +1,83 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Lake Formation permissions generated from Ranger
+Resources:
+  LFPerm0_market_access_team:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: market_access_team
+      Permissions:
+      - SELECT
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: marketaccess
+          Name: reimbursement
+    Type: AWS::LakeFormation::Permissions
+  LFPerm1_ma_lead:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: ma_lead
+      Permissions: &id001
+      - SELECT
+      - INSERT
+      - ALTER
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: marketaccess
+          Name: cost_models
+    Type: AWS::LakeFormation::Permissions
+  LFPerm1_market_access_team:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: market_access_team
+      Permissions: *id001
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: marketaccess
+          Name: cost_models
+    Type: AWS::LakeFormation::Permissions
+  LFPerm2_brand_mgr:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: brand_mgr
+      Permissions: &id002
+      - SELECT
+      - INSERT
+      - DELETE
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: branding
+          Name: assets
+    Type: AWS::LakeFormation::Permissions
+  LFPerm2_branding_team:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: branding_team
+      Permissions: *id002
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: branding
+          Name: assets
+    Type: AWS::LakeFormation::Permissions
+  LFPerm3_branding_team:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: branding_team
+      Permissions:
+      - SELECT
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: branding
+          Name: campaign_data
+    Type: AWS::LakeFormation::Permissions

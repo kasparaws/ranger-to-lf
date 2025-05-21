@@ -1,0 +1,60 @@
+{
+    "policies": [
+      {
+        "id": 301,
+        "name": "clinical_ops_full_access",
+        "service": "hive_prod",
+        "resourcePath": "/warehouse/clinical.db/trial_data",
+        "database": "clinical",
+        "table": "trial_data",
+        "users": ["trial_mgr"],
+        "groups": ["clinical_ops_team"],
+        "permissions": ["select", "insert", "update", "delete"]
+      },
+      {
+        "id": 302,
+        "name": "biostatistics_read",
+        "service": "hive_prod",
+        "resourcePath": "/warehouse/clinical.db/statistics",
+        "database": "clinical",
+        "table": "statistics",
+        "users": [],
+        "groups": ["biostatistics_team"],
+        "permissions": ["select"]
+      },
+      {
+        "id": 303,
+        "name": "reg_affairs_submissions_view",
+        "service": "hive_prod",
+        "resourcePath": "/warehouse/regulatory.db/submissions",
+        "database": "regulatory",
+        "table": "submissions",
+        "users": [],
+        "groups": ["reg_affairs_team"],
+        "permissions": ["select"]
+      },
+      {
+        "id": 304,
+        "name": "crom_anonymized_data_access",
+        "service": "hive_prod",
+        "resourcePath": "/warehouse/clinical.db/anonymized_data",
+        "database": "clinical",
+        "table": "anonymized_data",
+        "users": ["vendor_user"],
+        "groups": ["contract_research_org"],
+        "permissions": ["select"]
+      },
+      {
+        "id": 305,
+        "name": "audit_logs_read",
+        "service": "hive_prod",
+        "resourcePath": "/warehouse/logs.db/audit_events",
+        "database": "logs",
+        "table": "audit_events",
+        "users": [],
+        "groups": ["auditors"],
+        "permissions": ["select"]
+      }
+    ]
+  }
+  

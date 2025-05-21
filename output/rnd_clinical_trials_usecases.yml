@@ -1,0 +1,96 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Lake Formation permissions generated from Ranger
+Resources:
+  LFPerm0_bioinfo_joe:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: bioinfo_joe
+      Permissions: &id001
+      - SELECT
+      - INSERT
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: randd
+          Name: sequencing
+    Type: AWS::LakeFormation::Permissions
+  LFPerm0_r_and_d_team:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: r_and_d_team
+      Permissions: *id001
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: randd
+          Name: sequencing
+    Type: AWS::LakeFormation::Permissions
+  LFPerm1_proteomics_team:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: proteomics_team
+      Permissions:
+      - SELECT
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: randd
+          Name: proteomics
+    Type: AWS::LakeFormation::Permissions
+  LFPerm2_clinical_ops_team:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: clinical_ops_team
+      Permissions:
+      - SELECT
+      - INSERT
+      - ALTER
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: clinical
+          Name: patient_data
+    Type: AWS::LakeFormation::Permissions
+  LFPerm3_clinical_ops_team:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: clinical_ops_team
+      Permissions: &id002
+      - SELECT
+      - INSERT
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: clinical
+          Name: results
+    Type: AWS::LakeFormation::Permissions
+  LFPerm3_trial_mgr:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: trial_mgr
+      Permissions: *id002
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: clinical
+          Name: results
+    Type: AWS::LakeFormation::Permissions
+  LFPerm4_auditors:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: auditors
+      Permissions:
+      - SELECT
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: logs
+          Name: clinical_audit
+    Type: AWS::LakeFormation::Permissions

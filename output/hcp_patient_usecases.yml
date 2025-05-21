@@ -1,0 +1,98 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Lake Formation permissions generated from Ranger
+Resources:
+  LFPerm0_hcp_team:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: hcp_team
+      Permissions:
+      - SELECT
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: hcp
+          Name: profile
+    Type: AWS::LakeFormation::Permissions
+  LFPerm1_dr_jones:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: dr_jones
+      Permissions: &id001
+      - SELECT
+      - INSERT
+      - ALTER
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: hcp
+          Name: engagements
+    Type: AWS::LakeFormation::Permissions
+  LFPerm1_hcp_team:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: hcp_team
+      Permissions: *id001
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: hcp
+          Name: engagements
+    Type: AWS::LakeFormation::Permissions
+  LFPerm2_data_privacy_officer:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: data_privacy_officer
+      Permissions:
+      - SELECT
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: patient
+          Name: pii_masked
+    Type: AWS::LakeFormation::Permissions
+  LFPerm3_patient_data_analysts:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: patient_data_analysts
+      Permissions:
+      - SELECT
+      - INSERT
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: patient
+          Name: outcomes
+    Type: AWS::LakeFormation::Permissions
+  LFPerm4_clin_nurse:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: clin_nurse
+      Permissions: &id002
+      - SELECT
+      - INSERT
+      - ALTER
+      - DELETE
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: patient
+          Name: clinical_records
+    Type: AWS::LakeFormation::Permissions
+  LFPerm4_patient_care_team:
+    Properties:
+      DataLakePrincipal:
+        DataLakePrincipalIdentifier: patient_care_team
+      Permissions: *id002
+      Resource:
+        Table:
+          CatalogId:
+            Ref: AWS::AccountId
+          DatabaseName: patient
+          Name: clinical_records
+    Type: AWS::LakeFormation::Permissions

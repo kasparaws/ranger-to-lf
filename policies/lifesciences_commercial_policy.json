@@ -1,0 +1,49 @@
+{
+    "policies": [
+      {
+        "id": 201,
+        "name": "rnd_genomics_data_access",
+        "service": "hive_prod",
+        "resourcePath": "/warehouse/randd.db/genomics_raw",
+        "database": "randd",
+        "table": "genomics_raw",
+        "users": ["dr_smith"],
+        "groups": ["r_and_d_team"],
+        "permissions": ["select", "insert", "update"]
+      },
+      {
+        "id": 202,
+        "name": "executive_metrics_read",
+        "service": "hive_prod",
+        "resourcePath": "/warehouse/business.db/key_metrics",
+        "database": "business",
+        "table": "key_metrics",
+        "users": [],
+        "groups": ["executive_team"],
+        "permissions": ["select"]
+      },
+      {
+        "id": 203,
+        "name": "privacy_officer_patient_pii",
+        "service": "hive_prod",
+        "resourcePath": "/warehouse/patient.db/pii",
+        "database": "patient",
+        "table": "pii",
+        "users": [],
+        "groups": ["data_privacy_officer"],
+        "permissions": ["select"]
+      },
+      {
+        "id": 204,
+        "name": "data_engineer_sandbox_full",
+        "service": "hive_dev",
+        "resourcePath": "/warehouse/sandbox.db/*",
+        "database": "sandbox",
+        "table": "*",
+        "users": ["eng_sam"],
+        "groups": ["data_engineers"],
+        "permissions": ["select", "insert", "update", "delete", "create", "drop"]
+      }
+    ]
+  }
+  

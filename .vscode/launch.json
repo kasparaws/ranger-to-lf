@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Run converter",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder}/ranger_to_lf_converter.py",
+        "args": [
+          "--input", "policies/sample_ranger_policy.json",
+          "--output", "lakeformation_permissions.yml"
+        ],
+        "console": "integratedTerminal"
+      }
+    ]
+  }
+  

@@ -1,0 +1,60 @@
+{
+    "policies": [
+      {
+        "id": 801,
+        "name": "rnd_sequencing_data_access",
+        "service": "hive_prod",
+        "resourcePath": "/warehouse/randd.db/sequencing",
+        "database": "randd",
+        "table": "sequencing",
+        "users": ["bioinfo_joe"],
+        "groups": ["r_and_d_team"],
+        "permissions": ["select", "insert"]
+      },
+      {
+        "id": 802,
+        "name": "rnd_proteomics_analysis",
+        "service": "hive_prod",
+        "resourcePath": "/warehouse/randd.db/proteomics",
+        "database": "randd",
+        "table": "proteomics",
+        "users": [],
+        "groups": ["proteomics_team"],
+        "permissions": ["select"]
+      },
+      {
+        "id": 803,
+        "name": "clinical_trial_patient_data",
+        "service": "hive_prod",
+        "resourcePath": "/warehouse/clinical.db/patient_data",
+        "database": "clinical",
+        "table": "patient_data",
+        "users": [],
+        "groups": ["clinical_ops_team"],
+        "permissions": ["select", "insert", "update"]
+      },
+      {
+        "id": 804,
+        "name": "clinical_trial_results_publish",
+        "service": "hive_prod",
+        "resourcePath": "/warehouse/clinical.db/results",
+        "database": "clinical",
+        "table": "results",
+        "users": ["trial_mgr"],
+        "groups": ["clinical_ops_team"],
+        "permissions": ["select", "insert"]
+      },
+      {
+        "id": 805,
+        "name": "clinical_audit_logs_read",
+        "service": "hive_prod",
+        "resourcePath": "/warehouse/logs.db/clinical_audit",
+        "database": "logs",
+        "table": "clinical_audit",
+        "users": [],
+        "groups": ["auditors"],
+        "permissions": ["select"]
+      }
+    ]
+  }
+  

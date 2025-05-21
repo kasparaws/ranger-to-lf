@@ -1,0 +1,60 @@
+{
+    "policies": [
+      {
+        "id": 501,
+        "name": "hcp_profile_read",
+        "service": "hive_prod",
+        "resourcePath": "/warehouse/hcp.db/profile",
+        "database": "hcp",
+        "table": "profile",
+        "users": [],
+        "groups": ["hcp_team"],
+        "permissions": ["select"]
+      },
+      {
+        "id": 502,
+        "name": "hcp_engagement_update",
+        "service": "hive_prod",
+        "resourcePath": "/warehouse/hcp.db/engagements",
+        "database": "hcp",
+        "table": "engagements",
+        "users": ["dr_jones"],
+        "groups": ["hcp_team"],
+        "permissions": ["select", "insert", "update"]
+      },
+      {
+        "id": 503,
+        "name": "patient_pii_masked",
+        "service": "hive_prod",
+        "resourcePath": "/warehouse/patient.db/pii_masked",
+        "database": "patient",
+        "table": "pii_masked",
+        "users": [],
+        "groups": ["data_privacy_officer"],
+        "permissions": ["select"]
+      },
+      {
+        "id": 504,
+        "name": "patient_outcomes_write",
+        "service": "hive_prod",
+        "resourcePath": "/warehouse/patient.db/outcomes",
+        "database": "patient",
+        "table": "outcomes",
+        "users": [],
+        "groups": ["patient_data_analysts"],
+        "permissions": ["select", "insert"]
+      },
+      {
+        "id": 505,
+        "name": "patient_full_crud",
+        "service": "hive_prod",
+        "resourcePath": "/warehouse/patient.db/clinical_records",
+        "database": "patient",
+        "table": "clinical_records",
+        "users": ["clin_nurse"],
+        "groups": ["patient_care_team"],
+        "permissions": ["select", "insert", "update", "delete"]
+      }
+    ]
+  }
+  

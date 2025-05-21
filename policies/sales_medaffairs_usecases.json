@@ -1,0 +1,49 @@
+{
+    "policies": [
+      {
+        "id": 601,
+        "name": "sales_performance_metrics",
+        "service": "hive_prod",
+        "resourcePath": "/warehouse/sales.db/performance_metrics",
+        "database": "sales",
+        "table": "performance_metrics",
+        "users": [],
+        "groups": ["sales_ops"],
+        "permissions": ["select", "insert"]
+      },
+      {
+        "id": 602,
+        "name": "sales_forecast_export",
+        "service": "hive_prod",
+        "resourcePath": "/warehouse/sales.db/forecasts",
+        "database": "sales",
+        "table": "forecasts",
+        "users": ["sales_analyst"],
+        "groups": ["sales_ops"],
+        "permissions": ["select", "insert", "update"]
+      },
+      {
+        "id": 603,
+        "name": "medaff_publications_read",
+        "service": "hive_prod",
+        "resourcePath": "/warehouse/medaffairs.db/publications",
+        "database": "medaffairs",
+        "table": "publications",
+        "users": [],
+        "groups": ["medical_affairs_team"],
+        "permissions": ["select"]
+      },
+      {
+        "id": 604,
+        "name": "medaff_field_glossary_update",
+        "service": "hive_prod",
+        "resourcePath": "/warehouse/medaffairs.db/field_glossary",
+        "database": "medaffairs",
+        "table": "field_glossary",
+        "users": ["glossary_mgr"],
+        "groups": ["medical_affairs_team"],
+        "permissions": ["select", "insert", "update", "delete"]
+      }
+    ]
+  }
+  
