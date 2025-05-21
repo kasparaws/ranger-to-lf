@@ -1,107 +1,75 @@
 # Ranger to Lake Formation Converter
 
-This project provides a Python utility that converts Apache Ranger policy JSON files into an AWS Lake Formation CloudFormation template. The generated template defines corresponding Lake Formation permissions for tables in your data lake.
+This project provides a Python utility that converts Apache Ranger policy JSON files in a directory into AWS Lake Formation CloudFormation templates. Each generated template defines corresponding Lake Formation permissions for tables in your data lake and can be deployed via the AWS CLI or AWS CloudFormation.
 
 ## Project Structure
 
 ```
 ranger-to-lf/
 ├── .vscode/
-│   ├── launch.json          # VS Code debug configuration
-│   └── settings.json        # VS Code workspace settings
-├── policies/
-│   └── sample_ranger_policy.json  # Example Ranger policy file
+│   ├── launch.json               # VS Code debug configuration
+│   └── settings.json             # VS Code workspace settings
+├── policies/                     # Directory of Ranger JSON policy files
+│   ├── sample_ranger_policy.json # Example policies (multiple files supported)
+│   └── ...                       # Additional JSON files per use case/domain
+├── output/                       # Generated CloudFormation YAML files
+│   └── *.yml                     # One CFN per input JSON
 ├── ranger_to_lf_converter.py     # Conversion script
 ├── requirements.txt              # Python dependencies
-└── README.md                     # This file
+└── README.md                     # Project documentation
 ```
 
 ## Prerequisites
 
 * **Python 3.7+**
 * **pip**
-* **virtualenv** or **venv** (recommended)
-* VS Code (optional, but recommended for debugging)
+* **venv** or **virtualenv** (recommended)
+* **AWS CLI** configured with appropriate credentials
+* VS Code (optional, but recommended)
 
 ## Setup
 
-1. **Clone or create** the project directory:
+1. **Clone the repository**:
 
    ```bash
    git clone <your-repo-url> ranger-to-lf
    cd ranger-to-lf
    ```
 
-2. **Create a virtual environment** and install dependencies:
+2. **Create and activate a virtual environment**, then install dependencies:
 
    ```bash
    python3 -m venv .venv
    source .venv/bin/activate      # macOS/Linux
-   .venv\Scripts\activate       # Windows
+   .\.venv\Scripts\activate     # Windows
    pip install --upgrade pip
    pip install -r requirements.txt
    ```
 
-3. **Verify** that dependencies are installed:
+3. **Verify installation**:
 
    ```bash
-   pip list
-   # You should see PyYAML among the installed packages
+   pip list | grep PyYAML
    ```
-
-## Sample Ranger Policy
-
-Located at `policies/sample_ranger_policy.json`:
-
-```json
-{
-  "policies": [
-    {
-      "id": 101,
-      "name": "sales_readwrite",
-      "service": "hive_dev",
-      "resourcePath": "/warehouse/sales.db/customers",
-      "database": "sales",
-      "table": "customers",
-      "users": ["alice", "bob"],
-      "groups": ["analysts"],
-      "permissions": ["select", "insert", "update"]
-    },
-    {
-      "id": 102,
-      "name": "marketing_select",
-      "service": "hive_dev",
-      "resourcePath": "/warehouse/marketing.db/campaigns",
-      "database": "marketing",
-      "table": "campaigns",
-      "users": [],
-      "groups": ["marketing_team"],
-      "permissions": ["select"]
-    }
-  ]
-}
-```
 
 ## Usage
 
-### Command-line
+### Convert Ranger policies to CFN
 
-To generate a CloudFormation YAML:
+Run the converter to process all JSON files in `policies/` and write YAML templates into `output/`:
 
 ```bash
 python ranger_to_lf_converter.py \
   --policies-dir policies \
   --output-dir output
-
 ```
 
-* `--input`  : Path to your Ranger policy JSON file.
-* `--output` : Desired path for the generated CFN template.
+* `--policies-dir` (`-p`): Directory containing Ranger JSON policy files
+* `--output-dir` (`-o`): Directory to write generated CloudFormation YAML files
 
+### Deploy with AWS CLI
 
-### Deploy
-
-Run this to deploy:
+You can deploy each generated template as its own CloudFormation stack:
 
 ```bash
 for tmpl in output/*.yml; do
@@ -111,22 +79,19 @@ for tmpl in output/*.yml; do
     --stack-name lf-permissions-"$name" \
     --capabilities CAPABILITY_NAMED_IAM
 done
-
-
 ```
 
+**Tip**: Use a single merged template or nested stacks if you prefer one stack for all permissions.
 
-### VS Code Debug
+### VS Code Debug Configuration
 
-1. Open the folder in VS Code.
-2. Ensure the Python interpreter is set to `.venv` (should match `.vscode/settings.json`).
-3. Press **F5** or select **Run → Start Debugging** to invoke the `Run converter` configuration.
+* Open the project folder in VS Code.
+* Ensure the interpreter points to `.venv` (per `.vscode/settings.json`).
+* Press **F5** or select **Run → Start Debugging** to run the `Run converter` launch configuration.
 
-## Output
+## Example Output Snippet
 
-After running, you’ll get `lakeformation_permissions.yml`, containing an `AWS::LakeFormation::Permissions` resource for each principal/table permission described in your Ranger policies.
-
-### Example snippet from generated CFN
+A section from `output/sample_ranger_policy.yml`:
 
 ```yaml
 Resources:
@@ -148,11 +113,11 @@ Resources:
 
 ## Extending the Converter
 
-* **Custom action mappings**: Edit the `ACTION_MAP` in `ranger_to_lf_converter.py`.
-* **Resource types**: Add support for databases, columns, or S3 locations.
-* **Principal resolution**: Integrate with IAM to resolve group ARNs.
-* **Integration**: Embed this logic into a CDK or Terraform workflow.
+* **Custom action mappings**: Modify `ACTION_MAP` in `ranger_to_lf_converter.py`.
+* **Additional resource types**: Add support for databases, columns, or S3 locations.
+* **Principal resolution**: Integrate with IAM to resolve ARNs for users/groups.
+* **Infrastructure as Code**: Integrate within AWS CDK or Terraform workflows.
 
 ## License
 
-This code is provided under the MIT License. Feel free to adapt and extend.
+This project is released under the MIT License. Feel free to use, modify, and distribute as needed.
