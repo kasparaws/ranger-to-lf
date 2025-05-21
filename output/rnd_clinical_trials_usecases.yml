@@ -5,7 +5,7 @@ Resources:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: bioinfo_joe
-      Permissions: &id001
+      Permissions:
       - SELECT
       - INSERT
       Resource:
@@ -19,7 +19,9 @@ Resources:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: r_and_d_team
-      Permissions: *id001
+      Permissions:
+      - SELECT
+      - INSERT
       Resource:
         Table:
           CatalogId:
@@ -59,7 +61,7 @@ Resources:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: clinical_ops_team
-      Permissions: &id002
+      Permissions:
       - SELECT
       - INSERT
       Resource:
@@ -73,7 +75,9 @@ Resources:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: trial_mgr
-      Permissions: *id002
+      Permissions:
+      - SELECT
+      - INSERT
       Resource:
         Table:
           CatalogId:

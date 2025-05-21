@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Convert all Ranger policy JSON files in a folder into AWS Lake Formation
-CloudFormation templates. Each input JSON yields a corresponding YAML in the output folder.
+CloudFormation templates, without using YAML anchors/aliases.
 
 Usage:
     python ranger_to_lf_converter.py --policies-dir policies --output-dir output
@@ -12,6 +12,11 @@ import argparse
 import os
 import glob
 import sys
+
+# Custom Dumper to disable YAML aliases
+class NoAliasDumper(yaml.SafeDumper):
+    def ignore_aliases(self, data):
+        return True
 
 # Map Ranger actions to Lake Formation permissions
 ACTION_MAP = {
@@ -85,8 +90,9 @@ def main():
         cfn = build_cfn(policies)
         base = os.path.splitext(os.path.basename(json_file))[0]
         out_path = os.path.join(args.output_dir, f"{base}.yml")
+        # Write without aliases
         with open(out_path, 'w') as f:
-            yaml.safe_dump(cfn, f, default_flow_style=False)
+            yaml.dump(cfn, f, Dumper=NoAliasDumper, default_flow_style=False)
         print(f"Wrote CloudFormation → {out_path}")
 
 if __name__ == "__main__":

@@ -5,7 +5,7 @@ Resources:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: dr_smith
-      Permissions: &id001
+      Permissions:
       - SELECT
       - INSERT
       - ALTER
@@ -20,7 +20,10 @@ Resources:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: r_and_d_team
-      Permissions: *id001
+      Permissions:
+      - SELECT
+      - INSERT
+      - ALTER
       Resource:
         Table:
           CatalogId:
@@ -58,7 +61,7 @@ Resources:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: data_engineers
-      Permissions: &id002
+      Permissions:
       - SELECT
       - INSERT
       - ALTER
@@ -76,7 +79,13 @@ Resources:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: eng_sam
-      Permissions: *id002
+      Permissions:
+      - SELECT
+      - INSERT
+      - ALTER
+      - DELETE
+      - CREATE_TABLE
+      - DROP
       Resource:
         Table:
           CatalogId:

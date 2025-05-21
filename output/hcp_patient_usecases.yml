@@ -18,7 +18,7 @@ Resources:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: dr_jones
-      Permissions: &id001
+      Permissions:
       - SELECT
       - INSERT
       - ALTER
@@ -33,7 +33,10 @@ Resources:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: hcp_team
-      Permissions: *id001
+      Permissions:
+      - SELECT
+      - INSERT
+      - ALTER
       Resource:
         Table:
           CatalogId:
@@ -72,7 +75,7 @@ Resources:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: clin_nurse
-      Permissions: &id002
+      Permissions:
       - SELECT
       - INSERT
       - ALTER
@@ -88,7 +91,11 @@ Resources:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: patient_care_team
-      Permissions: *id002
+      Permissions:
+      - SELECT
+      - INSERT
+      - ALTER
+      - DELETE
       Resource:
         Table:
           CatalogId:

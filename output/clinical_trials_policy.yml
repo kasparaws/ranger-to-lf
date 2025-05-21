@@ -5,7 +5,7 @@ Resources:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: clinical_ops_team
-      Permissions: &id001
+      Permissions:
       - SELECT
       - INSERT
       - ALTER
@@ -21,7 +21,11 @@ Resources:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: trial_mgr
-      Permissions: *id001
+      Permissions:
+      - SELECT
+      - INSERT
+      - ALTER
+      - DELETE
       Resource:
         Table:
           CatalogId:
@@ -59,7 +63,7 @@ Resources:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: contract_research_org
-      Permissions: &id002
+      Permissions:
       - SELECT
       Resource:
         Table:
@@ -72,7 +76,8 @@ Resources:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: vendor_user
-      Permissions: *id002
+      Permissions:
+      - SELECT
       Resource:
         Table:
           CatalogId:

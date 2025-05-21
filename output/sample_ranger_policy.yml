@@ -5,7 +5,7 @@ Resources:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: alice
-      Permissions: &id001
+      Permissions:
       - SELECT
       - INSERT
       - ALTER
@@ -20,7 +20,10 @@ Resources:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: analysts
-      Permissions: *id001
+      Permissions:
+      - SELECT
+      - INSERT
+      - ALTER
       Resource:
         Table:
           CatalogId:
@@ -32,7 +35,10 @@ Resources:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: bob
-      Permissions: *id001
+      Permissions:
+      - SELECT
+      - INSERT
+      - ALTER
       Resource:
         Table:
           CatalogId:

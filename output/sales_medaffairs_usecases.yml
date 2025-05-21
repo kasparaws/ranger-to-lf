@@ -19,7 +19,7 @@ Resources:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: sales_analyst
-      Permissions: &id001
+      Permissions:
       - SELECT
       - INSERT
       - ALTER
@@ -34,7 +34,10 @@ Resources:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: sales_ops
-      Permissions: *id001
+      Permissions:
+      - SELECT
+      - INSERT
+      - ALTER
       Resource:
         Table:
           CatalogId:
@@ -59,7 +62,7 @@ Resources:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: glossary_mgr
-      Permissions: &id002
+      Permissions:
       - SELECT
       - INSERT
       - ALTER
@@ -75,7 +78,11 @@ Resources:
     Properties:
       DataLakePrincipal:
         DataLakePrincipalIdentifier: medical_affairs_team
-      Permissions: *id002
+      Permissions:
+      - SELECT
+      - INSERT
+      - ALTER
+      - DELETE
       Resource:
         Table:
           CatalogId:
